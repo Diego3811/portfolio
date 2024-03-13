@@ -17,6 +17,7 @@
 html{
     font-size: 62.5%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -167,9 +168,6 @@ span{
 }
 .about-content p{
     font-size: 1.6rem;
-<<<<<<< HEAD
-}
-=======
     margin: 2rem 0 3rem ;
 }
 
@@ -200,7 +198,7 @@ span{
     transform: scale(1.02);
 
 }
-
+ 
 .services-box .icon{
     font-size: 7rem;
     color: var(--main-color);
@@ -214,4 +212,23 @@ span{
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }
->>>>>>> be38d70 (first commit)
+
+.portfolio{
+    background: var(--second-bg-color);
+}
+.portfolio h2{
+    margin-bottom: 4rem;
+}
+.portfolio-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
