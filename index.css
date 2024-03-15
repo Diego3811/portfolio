@@ -241,9 +241,7 @@ span{
     transform: scale(1.1);
 }
 
-.portfolio-box:hover .portfolio-layer{
-    transform:translate(0);
-}
+
 
 .portfolio-box .portfolio-layer{
     position: absolute;
@@ -259,7 +257,13 @@ span{
     padding: 0 4rem;
     transform: translateY(100%);
     transition: .5s ease;
+    flex-direction: column;
 }
+
+.portfolio-box:hover .portfolio-layer{
+    transform:translate(0);
+}
+
 
 .portfolio-layer h4{
     font-size: 3rem;
@@ -285,3 +289,4 @@ span{
     font-size: 2rem;
     color: var(--second-bg-color);
 }
+
