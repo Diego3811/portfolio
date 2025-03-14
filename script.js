@@ -108,3 +108,99 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 });
+
+/*! PROYECTOS */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if(entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 150);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    projectCards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
+
+/*! SECCION DE CONTACTO  */
+// Animación de entrada
+document.addEventListener('DOMContentLoaded', () => {
+    const contactSection = document.querySelector('.contact-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    contactSection.style.opacity = 0;
+    contactSection.style.transform = 'translateY(30px)';
+    contactSection.style.transition = 'all 0.5s ease';
+    observer.observe(contactSection);
+});
+
+// Validación de formulario
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validar campos
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if(name && email && message) {
+        // Aquí iría la lógica de envío
+        alert('Mensaje enviado correctamente');
+        e.target.reset();
+    } else {
+        alert('Por favor completa todos los campos');
+    }
+});
+
+/*! FOOTER */
+// Año actual
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+const footer = document.querySelector('.site-footer');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+footer.style.opacity = 0;
+footer.style.transform = 'translateY(30px)';
+footer.style.transition = 'all 0.5s ease';
+observer.observe(footer);
