@@ -216,32 +216,29 @@ header {
     flex: 1;
     position: relative;
     max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-container {
-    position: relative;
+.hero-avatar img {
     width: 100%;
-    height: 500px;
-}
-
-.profile-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
     z-index: 2;
 }
 
-.deco-box {
+.hero-avatar::after {
+    content: '';
     position: absolute;
     bottom: -20px;
     right: -20px;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     background: var(--primary-color);
     border-radius: 20px;
     z-index: 1;
@@ -270,12 +267,14 @@ header {
         justify-content: center;
     }
 
-    .image-container {
-        height: 400px;
+    .hero-avatar {
+        margin-top: 2rem;
+        max-width: 300px;
     }
-
-    .deco-box {
-        display: none;
+    
+    .hero-avatar::after {
+        bottom: -10px;
+        right: -10px;
     }
 }
 /*?FIN DEL MAIN  */
